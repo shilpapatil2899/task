@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="col-md-2">
+    <div class="form-control imp">
+      <input type="file" (change)="onFileSelected($event)" />
+    </div>
+    
+    <div class="form-control">
+      <input class="imp" type="text" placeholder="Enter Name" (input)="searchByName($event.target.value)" />
+    
+      <input class="imp" type="text" placeholder="Enter Company Names (e.g., amazon, flipkart, visa)" (input)="searchByCompanyName  ($event.target.value)" />
+    
+      <input class="imp" type="text" placeholder="Enter Job Titles (e.g., title1, title2, title3)" (input)="searchByJobTitles($event.target.value)" />
+    </div>
+      <details>
+        <summary>Search Employee Details by Employee Size </summary>
+        <div class="empsize form-control">
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(1, 10, '1-10 Employees')" />
+            1-10 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(11, 50, '11-50 Employees')" />
+            11-50 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(21, 50, '21-50 Employees')" />
+            21-50 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(51, 200, '51-200 Employees')" />
+            51-200 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(101, 200, '101-200 Employees')" />
+            101-200 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(201, 500, '201-500 Employees')" />
+            201-500 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(501, 1000, '501-1000 Employees')" />
+            501-1000 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(1001, 5000, '1001-5000 Employees')" />
+            1001-5000 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(2001, 5000, '2001-5000 Employees')" />
+            2001-5000 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(5001, 10000, '5001-10000 Employees')" />
+            5001-10000 Employees
+          </label>
+          <label>
+            <input type="checkbox" (change)="updateEmployeeSizeFilters(10001, Infinity, '10001-Infinity Employees')" />
+            10001+ Employees
+          </label>
+        </div>
+      </details>
+  </div>
+  <div class="col-md-9 mx-5 p-2">
+    <table class="table responsive">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Name</th>
+          <th>Job Titles</th>
+          <th>Company Name</th>
+          <th>Company Size</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody class="table table-striped">
+        <tr *ngFor="let item of filteredData; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{ item.Name }}</td>
+          <td>{{ item['Job Titles'] }}</td>
+          <td>{{ item['Company Name'] }}</td>
+          <td>{{ item['Company Size'] }}</td>
+          <td>{{ item.Country }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  
+

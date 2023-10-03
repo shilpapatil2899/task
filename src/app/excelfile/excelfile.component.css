@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.empsize{
+    width: 250px;
+    
+}
+.imp{
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 3px;
+}
